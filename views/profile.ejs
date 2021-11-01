@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FinanceTracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/1b23973fb1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body id="bootstrap-overide">
+    
+    <div class="page-header text-center">
+      <h1></span class='deletebtn'>FinanceTracker</h1>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  </div>
+    
+    <main>
+      <div class="form-group">
+    <h3>Add Account</h3>
+    <form action="/account" method="post">
+      <input type="text" name="name" placeholder="Name of Account">
+      <input type="number" name="current" placeholder="Starting Deposit">
+      <button type="submit" class="btn btn-outline-dark" name="button">Submit</button>
+    </form>
+    </div>
+    <div class="form-group">
+    <h3>Deposit</h3>
+      <section>
+       
+        <input type="text" name="name" placeholder="Name of Account">
+        <input type="number" name="deposit" placeholder="Deposit Amount">
+        <input type="text" name="reason" placeholder="Deposit Statement">
+        <button id="deposit" type="submit" class="btn btn-outline-dark" name="button">Submit</button>
+        </div>
+      </section>
+      <div class="form-group">
+    <h3>Withdraw</h3>
+    <section>
+      <input type="text" name="name" placeholder="Name of Account">
+      <input type="number" name="withdrawal" placeholder="Withdrawal Amount">
+      <input type="text" name="reason" placeholder="Reason For Withdrawl">
+      <button id="withdraw" class="btn btn-outline-dark" type="submit" name="button">Submit</button>
+    </section>
+    </div>
+    <span class="instruction">Add Account & Deposit/Withdraw!</span>
+  </main>
+    <ul class="remaining list-group list-group-flush">
+      <% for(let i=0; i<remaining.length; i++) {%>
+        <li class="message list-group-item" >
+          <span class="name list-group"><%= remaining[i].name %></span>
+          <span class="current list-group">$<%= remaining[i].current %></span>
+          <span><i data-value= "<%=remaining[i].name%>" data-identify="<%=remaining[i]._id%>" class="fas fa-trash deletebtn"></i></span>
+          <% for(let j=0;j<remaining[i].transactions.length;j++){ %>
+            <p class="trans">
+              <span><%= remaining[i].transactions[j][0] %></span>
+              <span>$<%= remaining[i].transactions[j][1] %></span>
+            </p>
+            
+          <% } %>
+        </li>
+    
+      <% } %>
+      </ul>
+    <script src="main.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

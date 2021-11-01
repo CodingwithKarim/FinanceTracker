@@ -1,0 +1,81 @@
+
+ul {
+  color: black;
+  margin-top: 0;
+  padding-top: 2%;
+  text-align: left;
+  width: 100%;
+  background-color: beige;
+}
+h1 {
+  margin-top: 0;
+  line-height: 1.5;
+  color: beige;
+}
+li {
+  list-style-type: disclosure-closed;
+  border-bottom: 2px solid gray;
+  margin-bottom: 4%;
+}
+li:last-of-type {
+  border: none;
+}
+.trans {
+  font-size: 20px;
+  line-height: 0.5;
+  margin-top: 1%;
+}
+.name,
+.current {
+  font-size: 30px;
+}
+main {
+  width: 100%;
+  float: left;
+  background: beige;
+}
+input {
+  font-size: 18px;
+}
+
+.remaining {
+  height: max-content;
+}
+
+#bootstrap-overide .form-group {
+  margin-left: 35%;
+}
+
+#bootstrap-overide .list-group-flush {
+  text-align: center;
+}
+
+#bootstrap-overide .page-header {
+  padding-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: beige;
+  color: white;
+}
+
+#bootstrap-overide .page-header h1 {
+  color: black;
+}
+
+#bootstrap-overide .list-group-item {
+  border-bottom: 2px solid lightgray;
+  background-color: whitesmoke;
+}
+
+.instruction {
+  margin-left: 40%;
+  font-size: 20px;
+}
+
+.body {
+  background-color: beige;
+}
+
+.index-color {
+  background-color: aliceblue;
+}
