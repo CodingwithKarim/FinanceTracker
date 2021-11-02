@@ -59,6 +59,7 @@ module.exports= function(app,passport,db){
     })
   });
   //delete method using the account name pulling from a data attribute for each account
+  //tried using req.body._id but couldn't pull it from data attribute
   
   app.get('/profile', isLoggedIn, function(req, res) {
       db.collection('Balance').find().toArray((err, result) => {
