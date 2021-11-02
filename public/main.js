@@ -19,7 +19,6 @@ element.addEventListener("click", function(e){
 })
 
 document.querySelector("#withdraw").onclick = function(){
-  console.log("hi")
   const name = this.parentNode.childNodes[1].value;
   const change = (Number(this.parentNode.childNodes[3].value))*-1;
   console.log(change)
@@ -63,4 +62,4 @@ document.querySelector("#deposit").onclick = function(){
     window.location.reload(true)
   })
 };
-//two onclicks for withdraw and deposit buttons, the same but deposit is positive value while withdraw returns negative value with diff property value names for the if() logic for my app.put
+//two onclicks on single query selectors for withdraw and deposit buttons, the same but deposit is positive value while withdraw returns negative value with diff property value names for the if() logic for my app.put
