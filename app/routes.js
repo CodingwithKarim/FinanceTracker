@@ -22,7 +22,6 @@ module.exports= function(app,passport,db){
   //saving req.body.name, deposit amount, and array with the initial deposit as first index
   app.put('/account', (req, res) => {
     if("deposit" in req.body){
-      console.log("hi")
       db.collection('Balance')
       .findOneAndUpdate({name: req.body.name}, {
         $inc: {
@@ -50,15 +49,16 @@ module.exports= function(app,passport,db){
       })
     }
   })
-  //two fetches with main.js and checking for the withdraw/deposit property for the two puts and executes the proper put
-  //used increment and push instead of set, increment adds the value to the property while push appends to the array
+  //first time using if() logic in app.post/put sucessfully
+  //two fetches with main.js and checking for the withdraw/deposit property for the two puts and executes the proper put using if()
+  //used increment and push instead of set, increment adds the value to the property while push appends to the array, first index will not be altered from post because it is being pushed and not altering or setting
   app.delete('/account', (req, res) => {
     db.collection('Balance').findOneAndDelete({name: req.body.name}, (err, result) => {
       if (err) return res.send(500, err)
       res.send('Message deleted!')
     })
   });
-  //delete method using the account name pulling from a data attribute
+  //delete method using the account name pulling from a data attribute for each account
   
   app.get('/profile', isLoggedIn, function(req, res) {
       db.collection('Balance').find().toArray((err, result) => {

@@ -16,13 +16,13 @@
   <body id="bootstrap-overide" class="profilebody">
     
     <div class="page-header text-center">
-      <h1></span class='deletebtn'>FinanceTracker</h1>
+      <h1></span class='deletebtn'><%= user.local.email[0].toUpperCase() + user.local.email.slice(1)  + "'s FinanceTracker" %></h1>
       <a href="/logout" class="btn btn-default btn-sm">Logout</a>
   </div>
     
     <main>
       <div class="form-group">
-    <h3>Add Account</h3>
+    <h3>New Account</h3>
     <form action="/account" method="post">
       <input type="text" name="name" placeholder="Name of Account">
       <input type="number" name="current" placeholder="Starting Deposit">
@@ -53,7 +53,7 @@
     <ul class="remaining list-group list-group-flush">
       <% for(let i=0; i<remaining.length; i++) {%>
         <li class="message list-group-item" >
-          <span class="name list-group"><%= remaining[i].name %></span>
+          <span class="name list-group"><%= 'Account: ' + remaining[i].name %></span>
           <span class="current list-group">$<%= remaining[i].current %></span>
           <span><i data-value= "<%=remaining[i].name%>" data-identify="<%=remaining[i]._id%>" class="fas fa-trash deletebtn"></i></span>
           <% for(let j=0;j<remaining[i].transactions.length;j++){ %>
