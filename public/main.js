@@ -63,3 +63,4 @@ document.querySelector("#deposit").onclick = function(){
     window.location.reload(true)
   })
 };
+//two onclicks for withdraw and deposit buttons, the same but deposit is positive value while withdraw returns negative value with diff property value names for the if() logic for my app.put

@@ -5,11 +5,12 @@ module.exports= function(app,passport,db){
       });
   app.get("/account", (req,res) => {
       const name = req.query.name;
-      db.collection("Balance").find({name:name},{current:1}).toArray(function(err,result){//current 1 means only return the "current" property
+      db.collection("Balance").find({name:name},{current:1}).toArray(function(err,result){//only returning current property as a filter 
       if (err) return console.log(err)
       res.send(result)
     })
   })
+  //using query paramter like we did basic node
   app.post("/account", (req, res) => {
     db.collection('Balance')
     .save({name: req.body.name, current: Number(req.body.current),transactions:[["Deposit:",Number(req.body.current)]]}, (err, result) => {
@@ -18,6 +19,7 @@ module.exports= function(app,passport,db){
       res.redirect('/profile')
     })
   })
+  //saving req.body.name, deposit amount, and array with the initial deposit as first index
   app.put('/account', (req, res) => {
     if("deposit" in req.body){
       console.log("hi")
@@ -48,12 +50,15 @@ module.exports= function(app,passport,db){
       })
     }
   })
+  //two fetches with main.js and checking for the withdraw/deposit property for the two puts and executes the proper put
+  //used increment and push instead of set, increment adds the value to the property while push appends to the array
   app.delete('/account', (req, res) => {
     db.collection('Balance').findOneAndDelete({name: req.body.name}, (err, result) => {
       if (err) return res.send(500, err)
       res.send('Message deleted!')
     })
   });
+  //delete method using the account name pulling from a data attribute
   
   app.get('/profile', isLoggedIn, function(req, res) {
       db.collection('Balance').find().toArray((err, result) => {
