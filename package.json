@@ -2,6 +2,10 @@
   "name": "personalexpress",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "npm" : "7.24.0",
+    "node" : "v16.10.0"
+  },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.19.0",
