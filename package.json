@@ -13,6 +13,7 @@
     "mongodb": "^3.3.4",
     "mongoose": "^5.7.11",
     "morgan": "^1.9.1",
+    "node": "^17.2.0",
     "nodemon": "^2.0.15",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
@@ -29,5 +30,10 @@
     "url": "https://github.com/CodingwithKarim/FinanceTracker"
   },
   "homepage": "https://github.com/CodingwithKarim/FinanceTracker#readme",
-  "description": ""
+  "description": "<p align=\"center\"><img src=\"public/img/financetracker.png\" height=300px></p>",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingwithKarim/FinanceTracker.git"
+  }
 }
