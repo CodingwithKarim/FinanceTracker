@@ -25,13 +25,9 @@
   },
   "author": "",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AnthonySalmeron/BankBalances.git"
-  },
   "bugs": {
-    "url": "https://github.com/AnthonySalmeron/BankBalances/issues"
+    "url": "https://github.com/CodingwithKarim/FinanceTracker"
   },
-  "homepage": "https://github.com/AnthonySalmeron/BankBalances#readme",
+  "homepage": "https://github.com/CodingwithKarim/FinanceTracker#readme",
   "description": ""
 }
