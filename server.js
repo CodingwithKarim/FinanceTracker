@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
+var port = process.env.PORT || 8080;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -37,5 +38,5 @@ mongoose.connect(configDB.url, (err, database) => {
   db = database
   require('./app/routes.js')(app, passport, db);
 });
-app.listen(8080)
+app.listen(port)
 console.log('Listening on port 8080')
