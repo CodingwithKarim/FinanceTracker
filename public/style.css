@@ -23,7 +23,7 @@ li:last-of-type {
 .trans {
   font-size: 20px;
   line-height: 0.5;
-  margin-top: 1%;
+  margin-top: 2%;
 }
 .name,
 .current {
@@ -82,4 +82,20 @@ input {
 
 .profilebody{
   background-color: aliceblue;
+}
+
+#bootstrap-overide .center{
+  margin-top: 5%;
+}
+
+.title{
+  font-family: 'Righteous', cursive;
+}
+
+.text{
+  font-family: 'Arima Madurai', cursive;
+}
+
+#bootstrap-overide .logout{
+  border-color: blue;
 }
